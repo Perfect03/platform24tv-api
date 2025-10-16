@@ -18,6 +18,7 @@ export function createAuthModule(ctx: CoreContext) {
       if (fetchAccount?.status != 200) {
         console.error('Unauthorized');
         console.debug(await fetchAccount.text());
+        await this.refresh();
         return;
       }
 
