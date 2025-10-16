@@ -11,7 +11,7 @@ export function createAuthModule(ctx: CoreContext) {
         return;
       }
 
-      const fetchAccount = await fetch(`${ctx.DOMAIN_API}/v2/users/self`, {
+      const fetchAccount = await fetch(`${ctx.DOMAIN_API}/v2/users/self?access_token=${localStorage.getItem('access_token')}`, {
         headers: DEFAULT_HEADERS
       })
 
