@@ -1,0 +1,27 @@
+{
+  "name": "platform24tv-api",
+  "version": "1.0.0",
+  "description": "Reusable core library for working with streaming services powered by the Platform24 API.",
+  "keywords": [
+    "streaming"
+  ],
+  "author": "Gleb Zlobin",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "main": "dist/main.js",
+  "types": "dist/main.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "azt build"
+  },
+  "engines": {
+    "azot": ">=4.3.10"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "azot": "^5.0.0-alpha.8",
+    "typescript": "^5.9.3"
+  }
+}
