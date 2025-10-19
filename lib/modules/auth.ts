@@ -91,15 +91,15 @@ export function createAuthModule(ctx: CoreContext) {
         headers: DEFAULT_HEADERS
       });
 
-      const deviceId = (await devicesResponse?.json() as IDevices)?.id;
+      const device = await devicesResponse?.json() as IDevices
 
-      if (!deviceId) {
+      if (!device?.id) {
         console.error('Unexpected Error. Please, try later.');
-        console.debug(await devicesResponse?.json())
+        console.debug(device)
         return;
       }
 
-      localStorage.setItem('refresh_token', deviceId)
+      localStorage.setItem('refresh_token', device.id)
 
       const user = await this.refresh()
 
