@@ -56,7 +56,7 @@ export class P24 {
       init: this.init,
       canHandle: this.canHandle,
       fetchContentMetadata: async (url: string, args: any) => {
-        const slug = url.match(/\/watch\/?(.+)?$/)?.[1] || url.match(/[^-]+$/)?.[0];
+        const slug = url.match(/\/watch\/?([^/?#]+)/)?.[1] || url.match(/(\d+)(?:[/?#]|$)/)?.[1] || null;
     
         const results = [] as ContentMetadata[];
         
